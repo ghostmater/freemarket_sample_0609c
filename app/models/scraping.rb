@@ -1,6 +1,7 @@
 class Scraping
   def self.get_links
     agent = Mechanize.new
+    agent.user_agent_alias = "Windows Mozilla"
  
     current_page = agent.get('https://www.mercari.com/jp/category/')
     top_boxs = current_page.search('.category-list-individual-box')
